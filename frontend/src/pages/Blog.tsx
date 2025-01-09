@@ -8,7 +8,7 @@ export const Blog = ()=>{
     const { loading, post} = useBlog({
         id: id || "" 
     });
-    if(loading){
+    if(loading|| !post){
         return <div>
             <Appbar/>
         <div role="status" className="max-w-sm animate-pulse">
