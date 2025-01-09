@@ -1,7 +1,7 @@
 import { BlogCard } from "../components/BlogCard"
 import {Appbar} from "../components/Appbar.tsx"
 import {useBlogs} from "../hooks"
-import { Skeleton } from "../components/skeleton.tsx"
+import { Skeleton } from "../components/Skeleton.tsx"
 
 export const Blogs = () => {
     const {loading,blogs} = useBlogs();
