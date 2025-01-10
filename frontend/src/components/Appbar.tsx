@@ -1,7 +1,10 @@
 import { Avatar } from "./BlogCard"
 import { Link } from "react-router-dom"
-const Username = localStorage.getItem("Username")|| "Anonymous";
+
+// const Username = localStorage.getItem("Username")||"Anonymous";
 export const Appbar = () =>{
+    const userName = getName();
+    
     return <div className="border-b flex justify-between px-10 py-4">
         <Link to = {'/blog'}>
         <div className="flex flex-col justify-center font-semibold cursor-pointer text-4xl font-sans">
@@ -14,9 +17,15 @@ export const Appbar = () =>{
             </Link>
         </div>
         <div>
-            <Avatar name = {Username} size="big"/>
+            <Avatar name = {userName} size="big"/>
         </div>
 
     </div>
 
+}
+
+function getName(){
+
+    const Username = localStorage.getItem("Username")||"Anonymous";
+    return Username;
 }
