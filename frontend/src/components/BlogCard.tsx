@@ -5,7 +5,7 @@ interface BlogCardProps{
     authorname: string;
     title: string;
     content: string;
-    publishedDate: string
+    publishedDate: string;
 }
 
 export const BlogCard = ({
@@ -27,8 +27,9 @@ export const BlogCard = ({
             &#65372;
             </div>
 
-           <div className="font-thin px-1 ">
-                {publishedDate}
+           <div className="font-thin text-sm ">
+                {publishedDate.slice(0,10)}
+                
             </div>
         </div>
        

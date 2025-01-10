@@ -52,12 +52,13 @@ export const blogRouter = new Hono<{
         
       }
       const userId = c.get("userToken");
-
+      const date = new Date();
       const post  = await prisma.post.create({
         data:{
             title: body.title,
             content:body.content,
-            authorId: userId
+            authorId: userId,
+            date: date
 
         }
       })
@@ -111,6 +112,7 @@ blogRouter.get('/bulk' , async (c)=>{
         content: true,
         title:true,
         id: true,
+        date:true,
         author: {
           select: {
             name:true
@@ -140,6 +142,7 @@ blogRouter.get('/bulk' , async (c)=>{
           id:true,
           title:true,
           content:true,
+          date:true,
           author:{
             select:{
               name:true

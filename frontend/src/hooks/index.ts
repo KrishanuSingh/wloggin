@@ -5,6 +5,7 @@ export interface Blog{
             "content" : string,
             "title" : string,
             "id" : string,
+            "date": string,
             "author":{
                 "name":string
             }
@@ -15,6 +16,7 @@ export const useBlog = ({id}: {id:string})=>{
         content: "",
         title: "",
         id: "",
+        date: "",
         author: { name: "Anonymous" },
       });
 
