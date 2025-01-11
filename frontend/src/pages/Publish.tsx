@@ -9,7 +9,7 @@ export const Publish = () => {
     const [description, setDescription] = useState("");
     const navigate = useNavigate();
 
-    let TimeOut: NodeJS.Timeout;
+    let TimeOut: ReturnType<typeof setTimeout>;;
 
     function debounce() {
         clearTimeout(TimeOut); // Clear any previously set timeout
