@@ -24,7 +24,9 @@ export const Blogs = () => {
             </div>
             <div className=" flex justify-center pt-6">
                 <div className="w-96">
-               {blogs.map(blog=> <BlogCard
+               {blogs.slice()
+               .reverse()
+               .map(blog=> <BlogCard
                 key={blog.id}
                 id={blog.id}
                 authorname={blog.author.name || "Anonymous"}
