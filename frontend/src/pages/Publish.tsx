@@ -33,6 +33,7 @@ export const Publish = () => {
 
 
     return <div>
+         <div className="bg-[url('./assets/img/mainback3.png')] bg-auto bg-repeat ">
         <Appbar />
         <div className="flex justify-center w-full pt-8"> 
             <div className="max-w-screen-lg w-full">
@@ -48,6 +49,7 @@ export const Publish = () => {
                 </button>
             </div>
         </div>
+    </div>
     </div>
 }
 

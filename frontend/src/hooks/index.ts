@@ -6,6 +6,7 @@ export interface Blog{
             "title" : string,
             "id" : string,
             "date": string,
+            "click":number,
             "author":{
                 "name":string
             }
@@ -17,6 +18,7 @@ export const useBlog = ({id}: {id:string})=>{
         title: "",
         id: "",
         date: "",
+        click: 0,
         author: { name: "Anonymous" },
       });
 

@@ -1,4 +1,4 @@
-
+import logo from "../assets/img/logo.png";
 import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { SignupInput} from "@krishanusingh/validcheck2"
@@ -31,6 +31,9 @@ export const Auth = ({type}: {type: "signup"|"signin"}) =>{
     return <div className=" h-screen flex justify-center flex-col">
         <div className="flex justify-center">
             <div className="px-12">
+                <div className="flex justify-center pb-2">
+                    <img src={logo} className="w-16 h-16"></img>
+                </div>
                 <div className="text-4xl font-extrabold">
                     Create an account
                 </div>
@@ -46,7 +49,7 @@ export const Auth = ({type}: {type: "signup"|"signin"}) =>{
                     name: e.target.value
                 })
             }}/>: null}
-            <LabelledInput label="UserName" placeholder="abc@123.com" onChange={(e)=>{
+            <LabelledInput label="Username" placeholder="abc@123.com" onChange={(e)=>{
                 setpostInput({
                     ...postInputs,
                     email: e.target.value

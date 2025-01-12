@@ -113,6 +113,7 @@ blogRouter.get('/bulk' , async (c)=>{
         title:true,
         id: true,
         date:true,
+        click:true,
         author: {
           select: {
             name:true
@@ -133,6 +134,15 @@ blogRouter.get('/bulk' , async (c)=>{
 
       const id = await c.req.param("id");
       try{
+      
+        await prisma.post.update({
+          where: {
+              id: id
+          },
+          data: {
+              click: { increment: 1 }  
+          }
+      });
 
       const post  = await prisma.post.findFirst({
         where:{
@@ -143,6 +153,7 @@ blogRouter.get('/bulk' , async (c)=>{
           title:true,
           content:true,
           date:true,
+          click:true,
           author:{
             select:{
               name:true
