@@ -28,7 +28,7 @@ export const Publish = () => {
             } catch (error) {
                 console.error("Error publishing the post:", error);
             }
-        }, 1000); // Set the debounce delay to 1 second
+        }, 10000); // Set the debounce delay to 1 second
     }
 
 
