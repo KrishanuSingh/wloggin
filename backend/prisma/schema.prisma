@@ -30,4 +30,5 @@ model Post{
   authorId String
   date DateTime?
   click Int @default(0)
+  url String?
 }
