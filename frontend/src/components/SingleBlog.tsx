@@ -30,7 +30,11 @@ export const Singleblog = ({post}:{post: Blog}) =>{
         <div className="text-2xl font-semibold">
             {post.author.name || "Anonymous"}
         </div>
+       
     </div>
+    <div>
+            <img src={post.url}></img>
+        </div>
 </div>
 
 

@@ -8,10 +8,11 @@ export const Popularcard= ({
     authorname,
     title,
     content,
-    click}:BlogCardProps) =>{
+    click,
+    url}:BlogCardProps) =>{
 
     return <Link to ={`/blog/${id}`}>
-    <div>
+    <div className="w-3/4">
         <div className="border-l-2">        
         <div className="flex items-center px-1 pt-2">
            <Avatar name = {authorname} /> 
@@ -24,18 +25,28 @@ export const Popularcard= ({
          
         </div>
        
-        <div className="text-md font-semibold px-1 pt-2">
-            {title}
-        </div>
-        <div className="text-xs font-thin px-1">
-            {content.slice(0,100) + "..."}
-        </div>
-        <div className="text-slate-400 text-xs font-extralight px-1 pt-2 pb-4">
-                {`${Math.ceil(content.length/100)} minute(s) read`}
-         <span className=" px-2">   
-                Views:{click}
-        </span>       
-        </div>
+        <div className="flex">
+       
+       <span className="w-3/4" >
+       <div className=" z-10 text-l font-semibold px-1 pt-2">
+           {title}
+       </div>
+
+       <div className=" z-10 text-sm font-thin px-1">
+           {content.slice(0, 50) + "..."}
+       </div>
+     
+       <div className="text-slate-400 text-xs font-thin px-1 pt-2 pb-4">
+               {`${Math.ceil(content.length/100)} minute(s) read`}
+        <span className=" px-2">   
+               Views:{click}
+       </span>       
+       </div>
+       </span>
+       <span className="flex items-center">
+           <img src={url} className="w-28 h-20"></img>
+       </span>
+       </div>
         
            
         

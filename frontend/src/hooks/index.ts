@@ -7,6 +7,7 @@ export interface Blog{
             "id" : string,
             "date": string,
             "click":number,
+            "url":string,
             "author":{
                 "name":string
             }
@@ -19,10 +20,12 @@ export const useBlog = ({id}: {id:string})=>{
         id: "",
         date: "",
         click: 0,
+        url:"",
         author: { name: "Anonymous" },
       });
 
     useEffect(()=>{
+    
          axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
             headers: {Authorization: localStorage.getItem("token")}
          })
@@ -42,6 +45,7 @@ export const useBlogs = () =>{
     const [blogs, setBlogs] = useState<Blog[]>([]);
 
     useEffect(()=>{
+        const fetchPost = () => {
          axios.get(`${BACKEND_URL}/api/v1/blog/bulk`,{
             headers: {Authorization: localStorage.getItem("token")}
          })
@@ -49,6 +53,14 @@ export const useBlogs = () =>{
                 setBlogs(response.data.blog);
                 setLoading(false);
             })
+        }
+            fetchPost(); // Initial fetch
+
+            const interval = setInterval(() => {
+              fetchPost(); // Refetch every 5 seconds (adjust as needed)
+            }, 5000);
+        
+            return () => clearInterval(interval); 
     },[])
 
     return {

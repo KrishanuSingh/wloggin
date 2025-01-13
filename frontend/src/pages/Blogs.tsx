@@ -29,13 +29,13 @@ export const Blogs = () => {
                 <Appbar/>
             </div>
             <div className=" flex justify-center pt-6">
-                <span className="px-40">
+                <span className="w-3/6 pl-20">
                 <div className="text-4xl font-bold flex items-center gap-4">
                
                 <span>New Blogs</span>
                 <img src={icon} className="w-20 h-20" alt="Icon" />
             </div>
-                <div className="w-96 pt-2">
+                <div className="w-5/6 pt-2">
                {blogs.slice()
                 .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) 
                .map(blog=> <BlogCard
@@ -45,13 +45,14 @@ export const Blogs = () => {
                 title={blog.title}
                 content={blog.content}
                 publishedDate={blog.date}
-                click={blog.click}>    
+                click={blog.click}
+                url={blog.url}>    
                 </BlogCard>)}
                 </div>
                 </span>
                 <span className="flex justify-center">
               
-                    <div className="pt-20 px-28">
+                    <div className="pt-20 pl-16">
                     <div className="font-serif text-3xl font-bold flex">
                         <span>
                         Popular
@@ -71,7 +72,8 @@ export const Blogs = () => {
                             title={blog.title}
                             content={blog.content}
                             publishedDate={blog.date}
-                            click={blog.click}>    
+                            click={blog.click}
+                            url={blog.url}>    
                             </Popularcard>)
 
                         }

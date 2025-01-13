@@ -7,6 +7,7 @@ export interface BlogCardProps{
     content: string;
     publishedDate: string;
     click: number;
+    url:string;
 }
 
 export const BlogCard = ({
@@ -15,7 +16,8 @@ export const BlogCard = ({
     title,
     content,
     publishedDate,
-    click
+    click,
+    url
 }: BlogCardProps) =>{
     return <Link to ={`/blog/${id}`}>
     <div>
@@ -34,18 +36,27 @@ export const BlogCard = ({
                 
             </div>
         </div>
+        <div className="flex">
        
-        <div className="text-xl font-semibold px-1 pt-2">
+        <span className="w-3/4">
+        <div className=" z-10 text-xl font-semibold px-1 pt-2">
             {title}
         </div>
-        <div className="text-md font-thin px-1">
-            {content.slice(0,100) + "..."}
+
+        <div className=" z-10 text-md font-thin px-1">
+            {content.slice(0, 100) + "..."}
         </div>
+      
         <div className="text-slate-400 text-xs font-thin px-1 pt-2 pb-4">
                 {`${Math.ceil(content.length/100)} minute(s) read`}
          <span className=" px-2">   
                 Views:{click}
         </span>       
+        </div>
+        </span>
+        <span className="flex items-center">
+            <img src={url} className="w-32 h-24" alt="image"></img>
+        </span>
         </div>
         
            
