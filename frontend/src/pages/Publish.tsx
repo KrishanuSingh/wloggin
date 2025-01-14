@@ -13,7 +13,7 @@ export const Publish = () => {
 
     function debounce() {
         clearTimeout(TimeOut); // Clear any previously set timeout
-
+        navigate('/loading');
         TimeOut = setTimeout(async () => {
             try {
                 const response = await axios.post(`${BACKEND_URL}/api/v1/blog`, {
@@ -27,8 +27,9 @@ export const Publish = () => {
                 navigate(`/blog/${response.data.id}`);
             } catch (error) {
                 console.error("Error publishing the post:", error);
+                navigate('/publish');
             }
-        }, 10000); // Set the debounce delay to 1 second
+        }, 0); // Set the debounce delay to 10 second
     }
 
 
