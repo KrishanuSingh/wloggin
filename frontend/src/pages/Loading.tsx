@@ -12,7 +12,7 @@ export const Loading = () =>{
      <div className="h-screen flex items-center justify-center pb-40 ">
        
             <img src={gif} className="h-60 max-w-full rounded-lg filter grayscale "></img>
-            <figcaption className="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Your Blog Is Being Published</figcaption>
+            <figcaption className="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Getting things ready for you</figcaption>
         
     </div>
     </div>
